@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форми та JS | Шумейко Владислав</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body oncontextmenu="showCustomMenu(true, event.clientX, event.clientY); return false;"
+    onclick="showCustomMenu(false, 0, 0);">
+
+    <div id="custommenu">
+        <div class="menu-item" onclick="doAction('copy');">Скопіювати вміст</div>
+        <div class="menu-item" onclick="doAction('close');">Закрити вікно</div>
+        <div class="menu-item" onclick="doAction('fontIncrease');">Збільшити шрифт</div>
+        <div class="menu-item" onclick="doAction('fontDecrease');">Зменшити шрифт</div>
+        <div class="menu-item" onclick="doAction('changeBkg');">Змінити фон</div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <div class="header-block h-photo">
+                <img src="img/person.webp" alt="Моє фото" onmouseover="this.src='img/fis.jpg'"
+                    onmouseout="this.src='img/person.webp'">
+            </div>
+            <div class="header-block h-info">
+                <p>Тернопільський національний технічний університет ім. Івана Пулюя</p>
+                <p>Факультет ФІС</p>
+                <p>Кафедра комп’ютерних наук</p>
+            </div>
+            <div class="header-block h-logos">
+                <img src="img/fis.jpg" alt="ФІС"><img src="img/kn.png" alt="КН">
+            </div>
+            <div class="header-block h-personal">
+                <p><strong>Персональна сторінка</strong></p>
+                <p>Шумейко Владислав</p>
+                <p>група СП-33</p>
+            </div>
+        </header>
+
+        <nav class="main-menu">
+            <a href="index.html">Головна</a>
+            <a href="biography.html">Біографія</a>
+            <a href="group.html">Моя група</a>
+            <a href="hobby.html">Хоббі</a>
+            <a href="interesting.html">Цікаве</a>
+            <a href="forms.html">Форми JS</a>
+        </nav>
+
+        <div class="content-wrapper clearfix">
+            <main class="main-content" style="width: 100%; padding-right: 0;">
+                <h1 style="border: 1px solid #ccc; padding: 10px; margin-bottom: 20px; text-align: center;">Робота з
+                    формами (JavaScript)</h1>
+
+                <div class="group-info-block">
+                    <h3>Приклад 1. Перевірка пароля</h3>
+                    <form>
+                        <table>
+                            <tr>
+                                <td>Введіть пароль:</td>
+                                <td><input type="password" id="pwd1" onkeyup="editPassword(this.id,'message',8,16);">
+                                </td>
+                                <td><span id="message"
+                                        style="font-size: 10pt; font-weight: bold; margin-left: 10px;"></span></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+
+                <div class="group-info-block">
+                    <h3>Завдання 1. Випадаючий список та активація кнопки</h3>
+                    <select id="itemSelect" onchange="checkSelectState()">
+                        <option value="0">Виберіть пункт (неактивно)...</option>
+                        <option value="1">Пункт 1</option>
+                        <option value="2">Пункт 2</option>
+                        <option value="3">Пункт 3</option>
+                        <option value="4">Пункт 4</option>
+                        <option value="5">Пункт 5</option>
+                        <option value="6">Пункт 6</option>
+                        <option value="7">Пункт 7</option>
+                        <option value="8">Пункт 8</option>
+                        <option value="9">Пункт 9</option>
+                        <option value="10">Пункт 10</option>
+                    </select>
+                    <button id="submitBtn" disabled style="padding: 2px 10px; margin-left: 10px;">Відправити</button>
+                </div>
+
+                <div class="group-info-block">
+                    <h3>Завдання 2. Райони та вулиці</h3>
+                    <label>Райони: </label>
+                    <select onchange="showStreets(this.selectedIndex, 'streetsList');">
+                        <option>Виберіть район</option>
+                        <option>Галицький</option>
+                        <option>Франківський</option>
+                        <option>Личаківський</option>
+                        <option>Сихівський</option>
+                        <option>Шевченківський</option>
+                        <option>Всі райони</option>
+                    </select>
+                    <br><br>
+                    <label>Вулиці: </label>
+                    <select id="streetsList" style="visibility:hidden; min-width: 150px;"></select>
+                </div>
+
+                <div class="group-info-block">
+                    <h3>Завдання 3. Група з 10 прапорців</h3>
+                    <p style="font-size: 10pt; color: #555;">Відмітьте щонайменше 5 прапорців:</p>
+                    <div id="checkboxContainer">
+                        <script>
+                            for (let i = 1; i <= 10; i++) {
+                                document.write('<label style="display:inline-block; margin-right:15px;"><input type="checkbox" onchange="validateCheckboxes()"> Опція ' + i + '</label>');
+                            }
+                        </script>
+                    </div>
+                    <p id="checkboxWarning" style="color: red; font-weight: bold; margin-top: 10px;">Увага: вибрано
+                        замало прапорців! Потрібно щонайменше 5.</p>
+                </div>
+
+                <div class="group-info-block">
+                    <h3>Приклад 4. Таблиця товарів</h3>
+                    <table border="1" cellspacing="0" cellpadding="5" bordercolor="#ccc"
+                        style="width: 100%; border-collapse: collapse; text-align: center;">
+                        <tr style="background-color: #f4f4f4; font-weight: bold;">
+                            <td>Вибір</td>
+                            <td>Назва товару</td>
+                            <td>Виробник</td>
+                            <td>Ціна</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="goods" value="9800"></td>
+                            <td>Монітори CRT</td>
+                            <td>LG</td>
+                            <td>9800</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="goods" value="1320"></td>
+                            <td>Монітори CRT</td>
+                            <td>Samsung</td>
+                            <td>1320</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="goods" value="4190"></td>
+                            <td>Монітори TFT</td>
+                            <td>Samsung</td>
+                            <td>4190</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="goods" value="6800"></td>
+                            <td>HDD</td>
+                            <td>Seagate</td>
+                            <td>6800</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="goods" value="1610"></td>
+                            <td>HDD</td>
+                            <td>Hitachi</td>
+                            <td>1610</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="goods" value="1400"></td>
+                            <td>CD ROM</td>
+                            <td>LG</td>
+                            <td>1400</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" align="right" style="padding-right: 20px; font-weight: bold;">Сума: <span
+                                    id="price" style="color: #0056b3;">0</span></td>
+                        </tr>
+                    </table>
+                </div>
+
+            </main>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2026 Шумейко Владислав, група СП-33. Усі права захищено.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
