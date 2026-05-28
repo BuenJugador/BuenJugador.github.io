@@ -77,12 +77,6 @@
                         <option value="2">Пункт 2</option>
                         <option value="3">Пункт 3</option>
                         <option value="4">Пункт 4</option>
-                        <option value="5">Пункт 5</option>
-                        <option value="6">Пункт 6</option>
-                        <option value="7">Пункт 7</option>
-                        <option value="8">Пункт 8</option>
-                        <option value="9">Пункт 9</option>
-                        <option value="10">Пункт 10</option>
                     </select>
                     <button id="submitBtn" disabled style="padding: 2px 10px; margin-left: 10px;">Відправити</button>
                 </div>
@@ -123,52 +117,79 @@
                     <table border="1" cellspacing="0" cellpadding="5" bordercolor="#ccc"
                         style="width: 100%; border-collapse: collapse; text-align: center;">
                         <tr style="background-color: #f4f4f4; font-weight: bold;">
-                            <td>Вибір</td>
-                            <td>Назва товару</td>
-                            <td>Виробник</td>
-                            <td>Ціна</td>
+                            <td>Вибір</td><td>Назва товару</td><td>Виробник</td><td>Ціна</td>
                         </tr>
-                        <tr>
-                            <td><input type="checkbox" name="goods" value="9800"></td>
-                            <td>Монітори CRT</td>
-                            <td>LG</td>
-                            <td>9800</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="goods" value="1320"></td>
-                            <td>Монітори CRT</td>
-                            <td>Samsung</td>
-                            <td>1320</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="goods" value="4190"></td>
-                            <td>Монітори TFT</td>
-                            <td>Samsung</td>
-                            <td>4190</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="goods" value="6800"></td>
-                            <td>HDD</td>
-                            <td>Seagate</td>
-                            <td>6800</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="goods" value="1610"></td>
-                            <td>HDD</td>
-                            <td>Hitachi</td>
-                            <td>1610</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="goods" value="1400"></td>
-                            <td>CD ROM</td>
-                            <td>LG</td>
-                            <td>1400</td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" align="right" style="padding-right: 20px; font-weight: bold;">Сума: <span
-                                    id="price" style="color: #0056b3;">0</span></td>
-                        </tr>
+                        <tr><td><input type="checkbox" name="goods" value="9800"></td><td>Монітори CRT</td><td>LG</td><td>9800</td></tr>
+                        <tr><td><input type="checkbox" name="goods" value="1320"></td><td>Монітори CRT</td><td>Samsung</td><td>1320</td></tr>
+                        <tr><td><input type="checkbox" name="goods" value="4190"></td><td>Монітори TFT</td><td>Samsung</td><td>4190</td></tr>
+                        <tr><td colspan="4" align="right" style="padding-right: 20px; font-weight: bold;">Сума: <span id="price" style="color: #0056b3;">0</span></td></tr>
                     </table>
+                </div>
+
+                <div class="group-info-block">
+                    <h3>Нове Завдання 2. Зміна стилів поля вводу</h3>
+                    <label>Введіть пароль:</label>
+                    <input type="password" id="stylePwd">
+                    <button onclick="changePasswordStyle()" style="padding: 2px 10px; margin-left: 10px;">Змінити стиль</button>
+                </div>
+
+                <div class="group-info-block">
+                    <h3>Нове Завдання 3. Керування видимістю рядків таблиці</h3>
+                    <table border="1" id="myTable" cellspacing="0" cellpadding="5" style="width: 100%; text-align: center; margin-bottom: 10px;">
+                        <tr id="row1"><td style="background:#f9f9f9;">Рядок 1</td><td>Дані 1 (Зникне повністю)</td></tr>
+                        <tr id="row2"><td style="background:#f9f9f9;">Рядок 2</td><td>Дані 2 (Завжди видимий)</td></tr>
+                        <tr id="row3"><td style="background:#f9f9f9;">Рядок 3</td><td>Дані 3 (Зникне, але залишить місце)</td></tr>
+                    </table>
+                    <button onclick="hideTableRows()" style="padding: 2px 10px;">Приховати рядки</button>
+                </div>
+
+                <div class="group-info-block">
+                    <h3>Нове Завдання 4. Комплексна валідація форми</h3>
+                    <div style="display:flex; flex-direction:column; gap:10px; max-width:300px;">
+                        <input type="password" id="pass1" oninput="checkComplexForm()" placeholder="Введіть пароль">
+                        <input type="password" id="pass2" oninput="checkComplexForm()" placeholder="Повторіть пароль">
+                        <input type="text" id="textField" oninput="checkComplexForm()" placeholder="Введіть текст">
+                        <select id="selectField" onchange="checkComplexForm()">
+                            <option value="0">Виберіть пункт...</option>
+                            <option value="1">Опція 1</option>
+                            <option value="2">Опція 2</option>
+                        </select>
+                        <button id="submitComplexBtn" disabled style="padding: 5px;">Підтвердити</button>
+                    </div>
+                </div>
+
+                <div class="group-info-block">
+                    <h3>Нове Завдання 6-12. Робота з регулярними виразами (RegExp)</h3>
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="margin-bottom: 15px;">
+                            <strong>Завдання 6 (Мобільний):</strong> <input type="text" id="reg6" placeholder="0971234567"> 
+                            <button onclick="testUkrMobilePhone(document.getElementById('reg6').value)">Перевірити</button>
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong>Завдання 7 (Індекс Львова):</strong> <input type="text" id="reg7" placeholder="79000"> 
+                            <button onclick="testLvivPostalCode(document.getElementById('reg7').value)">Перевірити</button>
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong>Завдання 8 (Міський Львів):</strong> <input type="text" id="reg8" placeholder="297-77-77"> 
+                            <button onclick="testLvivCityPhone(document.getElementById('reg8').value)">Перевірити</button>
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong>Завдання 9 (HTML Коментарі):</strong> <input type="text" id="reg9" placeholder="Текст з "> 
+                            <button onclick="document.getElementById('reg9').value = removeHTMLComments(document.getElementById('reg9').value)">Видалити коментарі</button>
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong>Завдання 10 (Теги):</strong> <input type="text" id="reg10" placeholder="Текст з <p> <br> <hr> <font>"> 
+                            <button onclick="document.getElementById('reg10').value = removeSpecificTags(document.getElementById('reg10').value)">Видалити теги</button>
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong>Завдання 11 (Пробіли):</strong> <input type="text" id="reg11" value="   Текст з пробілами   "> 
+                            <button onclick="document.getElementById('reg11').value = trimSpaces(document.getElementById('reg11').value)">Видалити зайві пробіли</button>
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong>Завдання 12 (Рік):</strong> <input type="text" id="reg12" placeholder="1900-2099"> 
+                            <button onclick="testYearRange(document.getElementById('reg12').value)">Перевірити</button>
+                        </li>
+                    </ul>
                 </div>
 
             </main>
@@ -181,5 +202,4 @@
 
     <script src="script.js"></script>
 </body>
-
 </html>
