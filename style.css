@@ -19,6 +19,34 @@ body {
     height: 100vh;
 }
 
+#custommenu {
+    width: 250px;
+    position: absolute; 
+    visibility: hidden; 
+    background-color: #ffffff;
+    border: 1px solid #cccccc; 
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000; 
+    padding: 5px; 
+    font-family: Arial, sans-serif;
+}
+
+
+.menu-item {
+    color: #0056b3; 
+    font-size: 14px;
+    padding: 8px 10px;
+    margin-bottom: 2px;
+    cursor: pointer;
+    border: 1px solid transparent; 
+    transition: background-color 0.2s, border 0.2s; 
+}
+
+.menu-item:hover {
+    border: 1px solid #0056b3;
+    background-color: #e6f2ff; 
+}
+
 .container {
     width: 100%;
     max-width: 1200px;

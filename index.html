@@ -1,110 +1,124 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Персональний веб-сайт | Головна</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-<div class="container">
-    
-    <header class="header">
-        <div class="header-block h-photo">
-            <img src="img/person.webp" alt="Моє фото">
-        </div>
-        <div class="header-block h-info">
-            <p>Тернопільський національний технічний університет ім. Івана Пулюя</p>
-            <p>Факультет ФІС</p>
-            <p>Кафедра комп’ютерних наук</p>
-        </div>
-        <div class="header-block h-logos">
-            <img src="img/fis.jpg" alt="ФІС">
-            <img src="img/kn.png" alt="КН">
-        </div>
-        <div class="header-block h-personal">
-            <p><strong>Персональна сторінка</strong></p>
-            <p>Шумейко Владислав</p>
-            <p>група СП-33</p>
-        </div>
-    </header>
 
-    <nav class="main-menu">
-        <a href="index.html">Головна</a>
-        <a href="biography.html">Біографія</a>
-        <a href="group.html">Моя група</a>
-        <a href="hobby.html">Хоббі</a>
-        <a href="interesting.html">Цікаве</a>
-    </nav>
+<body oncontextmenu="showCustomMenu(true, event.clientX, event.clientY); return false;"
+    onclick="showCustomMenu(false, 0, 0);">
 
-    <div class="content-wrapper clearfix">
-        
-        <main class="main-content">
-            <h1>Головна сторінка</h1>
-            
-            <div class="promo-block" style="background-color: #d1ecf1; border-color: #bee5eb;">
-                <h2>Головний рекламний/інформаційний блок</h2>
-                <p>Тут розміщується основна банерна інформація.</p>
-            </div>
-
-            <div class="info-tiles">
-                <div class="tile">
-                    <h3>Біографія</h3>
-                    <p>Коротка інформація про мене.</p>
-                    <a href="biography.html">Детальніше &gt;&gt;</a>
-                </div>
-                <div class="tile">
-                    <h3>Група</h3>
-                    <p>Інформація про групу СП-33.</p>
-                    <a href="group.html">Детальніше &gt;&gt;</a>
-                </div>
-                <div class="tile">
-                    <h3>Хоббі 1</h3>
-                    <p>Опис першого захоплення.</p>
-                    <a href="hobby.html">Детальніше &gt;&gt;</a>
-                </div>
-                <div class="tile">
-                    <h3>Хоббі 2</h3>
-                    <p>Опис другого захоплення.</p>
-                    <a href="hobby.html">Детальніше &gt;&gt;</a>
-                </div>
-                <div class="tile">
-                    <h3>Хоббі 3</h3>
-                    <p>Опис третього захоплення.</p>
-                    <a href="hobby.html">Детальніше &gt;&gt;</a>
-                </div>
-                <div class="tile">
-                    <h3>Цікаве 1</h3>
-                    <p>Факт або стаття 1.</p>
-                    <a href="interesting.html">Детальніше &gt;&gt;</a>
-                </div>
-                <div class="tile">
-                    <h3>Цікаве 2</h3>
-                    <p>Факт або стаття 2.</p>
-                    <a href="interesting.html">Детальніше &gt;&gt;</a>
-                </div>
-                <div class="tile">
-                    <h3>Цікаве 3</h3>
-                    <p>Факт або стаття 3.</p>
-                    <a href="interesting.html">Детальніше &gt;&gt;</a>
-                </div>
-            </div>
-        </main>
-
-        <aside class="sidebar">
-            <div class="promo-block">Рекламний блок 1</div>
-            <div class="promo-block">Рекламний блок 2</div>
-            <div class="promo-block">Рекламний блок 3</div>
-        </aside>
-
+    <div id="custommenu">
+        <div class="menu-item" onclick="doAction('copy');">Скопіювати вміст</div>
+        <div class="menu-item" onclick="doAction('close');">Закрити вікно</div>
+        <div class="menu-item" onclick="doAction('fontIncrease');">Збільшити шрифт</div>
+        <div class="menu-item" onclick="doAction('fontDecrease');">Зменшити шрифт</div>
+        <div class="menu-item" onclick="doAction('changeBkg');">Змінити фон</div>
     </div>
 
-    <footer class="footer">
-        <p>&copy; 2026 Шумейко Владислав, група СП-33. Усі права захищено.</p>
-    </footer>
+    <div class="container">
+        <header class="header">
+            <div class="header-block h-photo">
+                <img src="img/person.webp" alt="Моє фото" onmouseover="this.src='img/fis.jpg'"
+                onmouseout="this.src='img/person.webp'">
+            </div>
+            <div class="header-block h-info">
+                <p>Тернопільський національний технічний університет ім. Івана Пулюя</p>
+                <p>Факультет ФІС</p>
+                <p>Кафедра комп’ютерних наук</p>
+            </div>
+            <div class="header-block h-logos">
+                <img src="img/fis.jpg" alt="ФІС">
+                <img src="img/kn.png" alt="КН">
+            </div>
+            <div class="header-block h-personal">
+                <p><strong>Персональна сторінка</strong></p>
+                <p>Шумейко Владислав</p>
+                <p>група СП-33</p>
+            </div>
+        </header>
+        
+        
+        <nav class="main-menu">
+            <a href="index.html">Головна</a>
+            <a href="biography.html">Біографія</a>
+            <a href="group.html">Моя група</a>
+            <a href="hobby.html">Хоббі</a>
+            <a href="interesting.html">Цікаве</a>
+        </nav>
+        
+        <div class="content-wrapper clearfix">
 
-</div>
+            <main class="main-content">
+                <h1>Головна сторінка</h1>
 
+                <div class="promo-block" style="background-color: #d1ecf1; border-color: #bee5eb;">
+                    <h2>Головний рекламний/інформаційний блок</h2>
+                    <p>Тут розміщується основна банерна інформація.</p>
+                </div>
+
+                <div class="info-tiles">
+                    <div class="tile">
+                        <h3>Біографія</h3>
+                        <p>Коротка інформація про мене.</p>
+                        <a href="biography.html">Детальніше &gt;&gt;</a>
+                    </div>
+                    <div class="tile">
+                        <h3>Група</h3>
+                        <p>Інформація про групу СП-33.</p>
+                        <a href="group.html">Детальніше &gt;&gt;</a>
+                    </div>
+                    <div class="tile">
+                        <h3>Хоббі 1</h3>
+                        <p>Опис першого захоплення.</p>
+                        <a href="hobby.html">Детальніше &gt;&gt;</a>
+                    </div>
+                    <div class="tile">
+                        <h3>Хоббі 2</h3>
+                        <p>Опис другого захоплення.</p>
+                        <a href="hobby.html">Детальніше &gt;&gt;</a>
+                    </div>
+                    <div class="tile">
+                        <h3>Хоббі 3</h3>
+                        <p>Опис третього захоплення.</p>
+                        <a href="hobby.html">Детальніше &gt;&gt;</a>
+                    </div>
+                    <div class="tile">
+                        <h3>Цікаве 1</h3>
+                        <p>Факт або стаття 1.</p>
+                        <a href="interesting.html">Детальніше &gt;&gt;</a>
+                    </div>
+                    <div class="tile">
+                        <h3>Цікаве 2</h3>
+                        <p>Факт або стаття 2.</p>
+                        <a href="interesting.html">Детальніше &gt;&gt;</a>
+                    </div>
+                    <div class="tile">
+                        <h3>Цікаве 3</h3>
+                        <p>Факт або стаття 3.</p>
+                        <a href="interesting.html">Детальніше &gt;&gt;</a>
+                    </div>
+                </div>
+            </main>
+
+            <aside class="sidebar">
+                <div class="promo-block">Рекламний блок 1</div>
+                <div class="promo-block">Рекламний блок 2</div>
+                <div class="promo-block">Рекламний блок 3</div>
+            </aside>
+
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2026 Шумейко Владислав, група СП-33. Усі права захищено.</p>
+        </footer>
+
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
